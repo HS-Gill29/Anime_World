@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <a :href="anime.url" target="blank" class="card-content">
+    <div class="card-content">
       <div class="image-container">
         <img :src="anime.images.jpg.large_image_url" :alt="anime.title + ' Poster'" />
       </div>
@@ -13,7 +13,7 @@
         <p class="anime-synopsis"><strong>Description: </strong>
             <span>{{ anime.synopsis }}</span></p>
       </div>
-    </a>
+    </div>
   </div>
 </template>
 
@@ -32,8 +32,7 @@ export default {
   flex-direction: column;
 }
 .card-content:hover {
-    background-color: #f0f0f0;
-    
+    background-color: rgb(255 236 194 / 66%);
 }
 
 .card-content {

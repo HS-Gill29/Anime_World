@@ -69,8 +69,8 @@ export default {
 .app {
   min-height: 100vh; 
   background-color: #e0cdb7;
- 
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -93,7 +93,7 @@ header h1 {
   font-weight: 200;
   text-align: center;
   text-transform: uppercase;
-  color:  rgb(41 129 166 / 71%);
+  color:  #06c;
 }
 .anime{
   font-weight: lighter;
@@ -102,7 +102,7 @@ header h1 {
 
 
 header h1:hover {
-  color: #b3b3b3;
+  color: #180045;
 }
 
 .search-box {
