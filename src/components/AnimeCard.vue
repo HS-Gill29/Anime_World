@@ -30,10 +30,11 @@ export default {
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  cursor: all-scroll;
 }
-.card-content:hover {
+/* .card-content:hover {
     background-color: rgb(255 236 194 / 66%);
-}
+} */
 
 .card-content {
   display: flex;
@@ -92,7 +93,7 @@ p {
 }
 
 
-@media screen and (min-width: 500px) and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .card-content {
     display: flex;
     flex-direction: column; 

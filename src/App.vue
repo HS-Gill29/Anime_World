@@ -1,40 +1,35 @@
 <template>
   <div class="app">
-    <header>
-    <h1>
-      <span class="anime">Anime </span>
-    <span class="world">World</span>
-    </h1>
-    
-    <form class="search-box" @submit.prevent = "handleSearch">
-      <font-awesome-icon icon="search" class="search-icon" />
-      <input type="search"
-       class="search-bar"
-       placeholder="Search for an anime..."
-       required
-       v-model="search_query"
-       />
-  
-       
-    </form>
-</header>
-<main>
-  <div class="cards">
-    <AnimeCard v-for="anime in animeList" :key="anime.mal_id"
-               :type = "TV" :anime="anime"
-    />
-    
+    <header >
+      <a href="/">
+<h1>
+        <span class="anime">Anime </span>
+        <span class="world">World</span>
+      </h1> </a>
+      <form class="search-box" @submit.prevent="handleSearch">
+        <input type="search"
+               class="search-bar"
+               placeholder="   Search for an anime..."
+               required
+               v-model="search_query" />
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+        </svg>
+      </form>
+    </header>
+    <main>
+      <div class="cards">
+        <AnimeCard v-for="anime in animeList" :key="anime.mal_id"
+                   :type="TV" :anime="anime" />
+      </div>
+    </main>
+  </div>
+</template>
 
-  </div>
-  <!-- -- add here for my front page -->
-</main>
-    
-  </div>
-  </template>
 
 <script>
- import { ref } from "vue";
-import AnimeCard from './components/AnimeCard'
+ import {  ref } from "vue";
+import AnimeCard from "./components/AnimeCard.vue";
 
 export default {
    components: {
@@ -42,6 +37,7 @@ export default {
    
   },
   setup (){
+    
     const search_query = ref("");
     const animeList = ref([])
 
@@ -52,12 +48,10 @@ export default {
 
       search_query.value = ""; 
     }
-    
    return{
     search_query,
     animeList,
-    handleSearch
-
+    handleSearch,
    }
 
   }
@@ -83,7 +77,6 @@ a {
 }
 
 header {
-  
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -94,6 +87,7 @@ header h1 {
   text-align: center;
   text-transform: uppercase;
   color:  #06c;
+  cursor: pointer;
 }
 .anime{
   font-weight: lighter;
@@ -113,7 +107,15 @@ header h1:hover {
   padding-left: 20px;
   padding-right: 30px;
 }
-
+.search-icon {
+  position: absolute;
+  width: 10px;  
+  height: 10px; 
+  position: absolute;
+  left: 31%;  
+  width: 20px;
+  height: 20px;
+}
 
 .search-bar {
   border: none;
@@ -144,6 +146,10 @@ header h1:hover {
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
 }
 
+.search-icon:focus{
+  color: whitesmoke;
+}
+
 main{
   max-width: 1200px;
   margin: 0 auto;
@@ -154,5 +160,6 @@ main{
   display: flex;
   flex-wrap: wrap;
 }
+
 
 </style>
